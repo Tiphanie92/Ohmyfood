@@ -1,2 +1,98 @@
-font-family: 'Roboto', sans-serif;
-font-family: 'Shrikhand', cursive;
+* {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Shrikhand', cursive;
+}
+
+header img {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+    header,
+    main {
+        margin: 1em;
+    }
+
+    /*-------header----------*/
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        width: 50%;
+
+    }
+
+    /*--------footer---------*/
+    footer {
+        background-color: grey;
+        padding: 1em;
+        font-family: roboto;
+    }
+
+    footer p {
+        font-family: roboto;
+
+    }
+
+    .logo-petit {
+        width: 30%;
+        filter: invert(100%);
+        margin-bottom: 0.3em;
+    }
+
+    .proposer {
+        margin: .1em;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .partenaire {
+        margin: .1em;
+        display: flex;
+        cursor: pointer;
+
+    }
+
+    .proposer p,
+    .partenaire p {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 1rem;
+        color: white;
+        text-align: justify;
+    }
+
+    .fa-utensils {
+        width: 1em;
+        height: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .fa-handshake-angle {
+        width: 1em;
+        height: 2em display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .mentions-contact {
+        margin-left: 0.1em;
+    }
+
+    .mentions-contact p {
+        margin: 0;
+        padding-top: 0.1em;
+        color: white;
+        text-align: justify;
+    }
+}
