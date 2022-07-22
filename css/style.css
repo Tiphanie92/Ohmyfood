@@ -15,12 +15,7 @@ a {
   color: black;
 }
 
-@media screen and (max-width: 600px) {
 
-  header,
-  {
-  margin: 1em;
-}
 
 /*-------header----------*/
 header {
@@ -74,27 +69,21 @@ header {
 }
 
 .Reserver h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+text-align: center;
   padding-top: 1.5em;
-  margin: 0;
+  margin: 0 3em 0 3em;
   font-size: 1.5em;
   font-weight: bold;
 }
 
 .Reserver p {
-  margin: 0.8em;
+  margin: 0.9em 3em 0.9em 3em;
+  text-align: center;
 }
 
-span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .bouton-explorer {
-  margin: .8em;
+  margin: 0.9em;
   border-radius: 1.8rem;
   font-size: 1rem;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -112,7 +101,7 @@ span {
 
 /*---Section fonctionnement--*/
 .titre {
-  margin: 3em 2em 2em 2em;
+  margin: 3em 1em 2em 1em;
 }
 
 .liste {
@@ -122,21 +111,18 @@ span {
   width: 100%;
 }
 
-.choix,
-.composez,
-.degustez {
+.liste__bloc
+ {
   border-radius: 1.3rem;
   background-color: #F6F6F6;
   display: inline-flex;
-  margin: 0 1.2em 0 1.2em;
+  margin: 0 1em 0 1em;
   cursor: pointer;
   font-size: 1.5rem;
   block-size: 100%;
 }
 
-.choix-icone,
-.compo-icone,
-.deguste-icone {
+.liste__icone {
   width: 1.2em;
   height: 1.2em;
   background: #9356DC;
@@ -148,9 +134,7 @@ span {
   align-items: center;
 }
 
-.choix-icone2,
-.compo-icone2,
-.deguste-icone2 {
+.liste__icone2 {
 
   margin: 0em 0.5em 0 0.8em;
   color: grey;
@@ -163,9 +147,7 @@ span {
 
 }
 
-.choix-titre,
-.compo-titre,
-.deguste-titre {
+.liste__titre {
   display: inline-block;
   display: flex;
   align-items: center;
@@ -188,7 +170,7 @@ span {
 
 /*----Section Restaurants----*/
 .restaurants {
-  padding: 2em;
+  padding: 1em;
   margin-top: 3em;
   background-color: #F6F6F6;
 }
@@ -261,16 +243,6 @@ span {
   font-size: 1.4em;
 }
 
-
-
-
-
-
-
-
-
-
-
 /*--------footer---------*/
 footer {
   background-color: #353535;
@@ -323,7 +295,7 @@ footer p {
 
 .fa-handshake-angle {
   width: 1em;
-  height: 2em display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -341,4 +313,122 @@ footer p {
   text-align: justify;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+h2 
+{
+  font-size: 1.6em;
+}
+
+h3 
+{
+  font-size:1.2em ;
+}
+
+p 
+{
+  font-size: 1.1em;
+}
+/*---Header---*/
+.logo
+{
+  width: 25%;
+}
+
+/*---Section Reservation--*/
+.Reserver h1
+{
+  font-size: 1.8em;
+}
+
+.bouton-explorer
+{
+  padding: 0 0.4em 0 0.4em;
+  font-size: 1.1em;
+}
+/*--Section Fonctionnement__*/
+.liste
+{
+  justify-content: center;
+  align-items: center;
+}
+
+.titre
+{
+  text-align: center;
+}
+
+.liste__bloc
+{
+
+  width: 60%;
+  font-size: 1.5em;
+}
+
+.liste__icone
+{
+  margin: 1.3em 0 0 -0.5em;
+}
+/*--Section restaurants--*/
+.titre-restau
+{
+  text-align: center;
+}
+
+.bloc
+{
+  margin: 0 2em 0 2em;
+}
+
+/*--Footer--*/
+.logo-petit
+{
+  width: 20%;
+}
+}
+
+@media screen and (min-width: 1024px) {
+
+  .logo
+  {
+    width: 20%;
+  }
+  .liste
+  {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .liste__bloc
+  {
+    width: 100%;
+    margin: 0 0.7em 0 0.7em;
+  }
+
+  .bloc-card
+  {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .bloc
+  {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2em;
+    
+  }
+
+  .deux-bloc
+  {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .logo-petit
+  {
+    width: 15%;
+  }
 }
