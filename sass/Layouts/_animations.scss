@@ -1,0 +1,17 @@
+.fa-heart:hover {
+    animation: fill 1s ease-out;
+    background: linear-gradient($couleur-primaire, $couleur-secondaire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+
+  @keyframes fill{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}

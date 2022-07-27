@@ -1,0 +1,13 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-family: "Shrikhand", cursive;
+}
+
+h2, h3, p {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=general.css.map */
