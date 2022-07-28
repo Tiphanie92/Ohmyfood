@@ -2,7 +2,7 @@
 @import"./Base/general";
 @import"./Utils/_mixins";
 @import"./Utils/_variables";
-@import"./Layouts/animations";
+@import"./Layouts/_animations";
 
 /*---Section Reservation---*/
 .Reservation {
@@ -59,10 +59,15 @@
     display: flex;
     cursor: pointer;
     color: white;
+    @include shadow;
      p {
         display: flex;
         align-items: center;
         margin: 1rem 1.5rem 1rem 1.5rem;
+      }
+      a{
+        color: white;
+        font-family: roboto;
       }
   }
   
@@ -84,6 +89,7 @@
         cursor: pointer;
         font-size: 1.5rem;
         block-size: 100%;
+        @include shadow;
       }
       &__icone {
         width: 1.2em;

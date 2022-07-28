@@ -1,17 +1,68 @@
-.fa-heart:hover {
-    animation: fill 1s ease-out;
-    background: linear-gradient($couleur-primaire, $couleur-secondaire);
+
+.fa-heart{
+    
+    &:active{
+    background: linear-gradient($couleur-primaire, $couleur-secondaire); 
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-  }
-
-  @keyframes fill{
-    0%{
-        opacity: 0;
-    }
-
-    100%{
-        opacity: 1;
-    }
+    animation: fill .9s ease-out;
+ }
 }
+
+@keyframes fill {
+    0%{
+       opacity: 0;;
+     }
+     30%{
+    opacity: 0.2;
+     }
+     50%{
+        opacity: 0.5;
+     }
+     70%
+     {
+        opacity: 0.7;
+     }
+     100%
+     {
+        opacity: 1;
+     }
+}
+
+.bouton-explorer
+{
+    &:hover{
+    filter: brightness(110%);
+    font-weight:500;
+    @include darkness-shadow;
+}
+}
+
+.liste__bloc:hover
+{
+    background: linear-gradient($couleur-primaire, $couleur-secondaire);
+    animation: fill .9s ease-out;
+    color: white;
+    @include darkness-shadow;
+}
+
+.liste__icone2:hover
+{
+   color: white;
+}
+
+.bloc__card:hover
+{
+   @include darkness-shadow;
+   color: ($couleur-tertiaire);
+}
+
+.card__texte:hover
+{
+   color: ($couleur-tertiaire);
+}
+
+  
+ 

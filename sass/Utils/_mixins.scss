@@ -8,3 +8,7 @@
 @mixin shadow {
     box-shadow: 1px 4px 14px 1px #cecece;  
 }
+
+@mixin darkness-shadow{
+    box-shadow: 2px 4px 15px 1px #737373;
+}
