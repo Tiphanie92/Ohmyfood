@@ -10,7 +10,18 @@
     animation: fill .9s ease-out;
  }
 }
-
+@media screen and (min-width: 1024px){
+   .fa-heart{
+   &:hover{
+      background: linear-gradient($couleur-primaire, $couleur-secondaire); 
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: fill .9s ease-out;
+}
+}
+}
 @keyframes fill {
     0%{
        opacity: 0;;
@@ -37,32 +48,91 @@
     filter: brightness(110%);
     font-weight:500;
     @include darkness-shadow;
+   @include transition;
 }
 }
 
 .liste__bloc:hover
 {
-    background: linear-gradient($couleur-primaire, $couleur-secondaire);
-    animation: fill .9s ease-out;
-    color: white;
-    @include darkness-shadow;
-}
-
-.liste__icone2:hover
-{
-   color: white;
+   background-color: #F5EDFF;
+    @include transition;
 }
 
 .bloc__card:hover
 {
    @include darkness-shadow;
-   color: ($couleur-tertiaire);
+   @include transition;
 }
 
-.card__texte:hover
-{
-   color: ($couleur-tertiaire);
-}
+.loader {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   left: 0;
+   top: 0;
+   background-color: rgba(255, 255, 255, 0.90);
+   animation: loader 0.01s;
+   animation-delay: 1.75s;
+   animation-fill-mode: both;
+   z-index: 10000;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+ }
 
-  
- 
+ @keyframes loader {
+   100% {
+     opacity: 0;
+     z-index: -10;
+   }
+ }
+
+ .linespinner {
+   width: 10px;
+   height: 30px;
+   background:$couleur-primaire;
+   position: relative;
+   animation: linespinner 1s ease-in-out infinite;
+   animation-delay: 0.4s;
+   border-radius: 8px;
+      &:after{
+      border-radius: 8px;
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 30px;
+      background: $couleur-secondaire;
+      animation: linespinner 1s ease-in-out infinite; 
+      left: 18px;
+      animation-delay: 0.6s;}
+      &:before{
+         border-radius: 8px;
+         content: '';
+         position: absolute;
+         width: 10px;
+         height: 30px;
+         background: $couleur-secondaire;
+         animation: linespinner 1s ease-in-out infinite;
+         right: 18px;
+         animation-delay: 0.15s; 
+      }
+ }
+
+ @keyframes linespinner {
+   0%, 100% {
+     background-color: $couleur-primaire;
+     box-shadow: 0 0 0 $couleur-primaire, 0 0 0 $couleur-primaire; }
+   50% {
+     background-color: $couleur-secondaire;
+     box-shadow: 0 -15px 0 $couleur-secondaire, 0 15px 0 $couleur-secondaire; 
+   }
+   }
+
+   @keyframes appear{
+      0%{
+          transform: scale(0);
+      }
+      100%{
+          transform: scale(1);
+      }
+   }

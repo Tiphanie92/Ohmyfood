@@ -12,3 +12,9 @@
 @mixin darkness-shadow{
     box-shadow: 2px 4px 15px 1px #737373;
 }
+
+@mixin transition{
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
