@@ -1,3 +1,63 @@
+/*Animation Loading spinner*/
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linespinner {
+  width: 10px;
+  height: 30px;
+  background: #9356DC;
+  position: relative;
+  animation: linespinner 1s ease-in-out infinite;
+  animation-delay: 0.4s;
+  border-radius: 0.5em;
+}
+.linespinner:after {
+  border-radius: 0.5em;
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: #FF79DA;
+  animation: linespinner 1s ease-in-out infinite;
+  left: 18px;
+  animation-delay: 0.6s;
+}
+.linespinner:before {
+  border-radius: 0.5em;
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: #FF79DA;
+  animation: linespinner 1s ease-in-out infinite;
+  right: 18px;
+  animation-delay: 0.15s;
+}
+
+/*Boutons*/
+.bouton-explorer:hover {
+  filter: brightness(110%);
+  font-weight: 500;
+  box-shadow: 2px 4px 15px 1px #737373;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+/*Remplissage coeur*/
 .fa-heart:active {
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
@@ -17,6 +77,38 @@
     animation: fill 0.9s ease-out;
   }
 }
+/*transition sur card*/
+.liste__bloc:hover {
+  background-color: #f5edff;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.bloc__card:hover {
+  box-shadow: 2px 4px 15px 1px #737373;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+/*Keyframes*/
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes linespinner {
+  0%, 100% {
+    background-color: #9356DC;
+    box-shadow: 0 0 0 #9356DC, 0 0 0 #9356DC;
+  }
+  50% {
+    background-color: #FF79DA;
+    box-shadow: 0 -0.9em 0 #FF79DA, 0 0.9em 0 #FF79DA;
+  }
+}
 @keyframes fill {
   0% {
     opacity: 0;
@@ -32,93 +124,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-.bouton-explorer:hover {
-  filter: brightness(110%);
-  font-weight: 500;
-  box-shadow: 2px 4px 15px 1px #737373;
-  transition-property: all;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-
-.liste__bloc:hover {
-  background-color: #F5EDFF;
-  transition-property: all;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-
-.bloc__card:hover {
-  box-shadow: 2px 4px 15px 1px #737373;
-  transition-property: all;
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-
-.loader {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  animation: loader 0.01s;
-  animation-delay: 1.75s;
-  animation-fill-mode: both;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes loader {
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
-}
-.linespinner {
-  width: 10px;
-  height: 30px;
-  background: #9356DC;
-  position: relative;
-  animation: linespinner 1s ease-in-out infinite;
-  animation-delay: 0.4s;
-  border-radius: 8px;
-}
-.linespinner:after {
-  border-radius: 8px;
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 30px;
-  background: #FF79DA;
-  animation: linespinner 1s ease-in-out infinite;
-  left: 18px;
-  animation-delay: 0.6s;
-}
-.linespinner:before {
-  border-radius: 8px;
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 30px;
-  background: #FF79DA;
-  animation: linespinner 1s ease-in-out infinite;
-  right: 18px;
-  animation-delay: 0.15s;
-}
-
-@keyframes linespinner {
-  0%, 100% {
-    background-color: #9356DC;
-    box-shadow: 0 0 0 #9356DC, 0 0 0 #9356DC;
-  }
-  50% {
-    background-color: #FF79DA;
-    box-shadow: 0 -15px 0 #FF79DA, 0 15px 0 #FF79DA;
   }
 }
 @keyframes appear {
@@ -256,15 +261,18 @@ main {
 .menu h1 {
   font-size: 2em;
 }
-
 .menu__titre__principal {
   display: flex;
   padding-left: 1em;
 }
-.menu__titre__principal .fa-menu {
+.menu__titre__principal .bouton_coeur {
+  background: none;
+  border: none;
+}
+.menu__titre__principal .bouton_coeur .fa-menu {
   position: absolute;
   right: 1.7em;
-  top: 1.3em;
+  top: 1.5em;
 }
 
 .menu__titre {
@@ -324,7 +332,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 100px;
+  border-radius: 3.25em;
   transform: rotate(180deg);
   transition-duration: 0.5s;
 }
@@ -462,7 +470,7 @@ main {
 .localisation--gris {
   background-color: #eaeaea;
   width: 100%;
-  border-top: #cecece 2px solid;
+  border-top: #cecece 0.13em solid;
 }
 .localisation--gris .localisation {
   display: flex;
@@ -497,6 +505,7 @@ main {
 
 .bouton-explorer {
   margin: 0.9em;
+  padding: 1em 1em 1em 1em;
   border-radius: 1.8rem;
   font-size: 1rem;
   background: linear-gradient(#ff79da, #9356dc);
@@ -504,15 +513,7 @@ main {
   cursor: pointer;
   color: white;
   box-shadow: 1px 4px 14px 1px #cecece;
-}
-.bouton-explorer p {
-  display: flex;
-  align-items: center;
-  margin: 1rem 1.5rem 1rem 1.5rem;
-}
-.bouton-explorer a {
-  color: white;
-  font-family: roboto;
+  border: none;
 }
 
 /*Section Fonctionnement*/
@@ -601,15 +602,15 @@ main {
   position: relative;
   background-color: white;
   box-shadow: 1px 4px 14px 1px #cecece;
-  border-radius: 15px;
+  border-radius: 0.9em;
   margin-bottom: 2em;
 }
 
 .menu__image {
   width: 100%;
   height: 13em;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 0.9em;
+  border-top-right-radius: 0.9em;
   object-fit: cover;
 }
 
@@ -639,6 +640,8 @@ main {
   position: absolute;
   right: 1em;
   bottom: 2em;
+  background: none;
+  border: none;
 }
 .card__texte {
   padding: 1em;
@@ -700,15 +703,23 @@ main {
   .liste {
     display: flex;
     flex-direction: row;
+    column-gap: 1em;
   }
   .liste__bloc {
     width: 100%;
     margin: 0 0.7em 0 0.7em;
   }
+  .fonctionnement {
+    margin: 0 2em 0 2em;
+  }
+  .restaurant__titre {
+    margin: 0 2em 0 2em;
+  }
   .restaurant__bloc {
     display: flex;
     flex-direction: row;
     column-gap: 2em;
+    margin: 0 2em 0 2em;
   }
   .restaurant__bloc .bloc__multi {
     flex-wrap: wrap;

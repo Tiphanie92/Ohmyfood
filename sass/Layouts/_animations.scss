@@ -1,138 +1,142 @@
+/*Animation Loading spinner*/
 
-.fa-heart{
-    
-    &:active{
-    background: linear-gradient($couleur-primaire, $couleur-secondaire); 
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linespinner {
+  width: 10px;
+  height: 30px;
+  background: $couleur-primaire;
+  position: relative;
+  animation: linespinner 1s ease-in-out infinite;
+  animation-delay: 0.4s;
+  border-radius: 0.5em;
+  &:after {
+    border-radius: 0.5em;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: $couleur-secondaire;
+    animation: linespinner 1s ease-in-out infinite;
+    left: 18px;
+    animation-delay: 0.6s;
+  }
+  &:before {
+    border-radius: 0.5em;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: $couleur-secondaire;
+    animation: linespinner 1s ease-in-out infinite;
+    right: 18px;
+    animation-delay: 0.15s;
+  }
+}
+
+/*Boutons*/
+.bouton-explorer {
+  &:hover {
+    filter: brightness(110%);
+    font-weight: 500;
+    @include darkness-shadow;
+    @include transition;
+  }
+}
+
+/*Remplissage coeur*/
+.fa-heart {
+  &:active {
+    background: linear-gradient($couleur-primaire, $couleur-secondaire);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-    animation: fill .9s ease-out;
- }
+    animation: fill 0.9s ease-out;
+  }
 }
-@media screen and (min-width: 1024px){
-   .fa-heart{
-   &:hover{
-      background: linear-gradient($couleur-primaire, $couleur-secondaire); 
+@media screen and (min-width: 1024px) {
+  .fa-heart {
+    &:hover {
+      background: linear-gradient($couleur-primaire, $couleur-secondaire);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bold;
-      animation: fill .9s ease-out;
+      animation: fill 0.9s ease-out;
+    }
+  }
 }
+
+/*transition sur card*/
+.liste__bloc:hover {
+  background-color: #f5edff;
+  @include transition;
 }
+
+.bloc__card:hover {
+  @include darkness-shadow;
+  @include transition;
 }
+
+/*Keyframes*/
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+@keyframes linespinner {
+  0%,
+  100% {
+    background-color: $couleur-primaire;
+    box-shadow: 0 0 0 $couleur-primaire, 0 0 0 $couleur-primaire;
+  }
+  50% {
+    background-color: $couleur-secondaire;
+    box-shadow: 0 -0.9em 0 $couleur-secondaire, 0 0.9em 0 $couleur-secondaire;
+  }
+}
+
 @keyframes fill {
-    0%{
-       opacity: 0;;
-     }
-     30%{
+  0% {
+    opacity: 0;
+  }
+  30% {
     opacity: 0.2;
-     }
-     50%{
-        opacity: 0.5;
-     }
-     70%
-     {
-        opacity: 0.7;
-     }
-     100%
-     {
-        opacity: 1;
-     }
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.bouton-explorer
-{
-    &:hover{
-    filter: brightness(110%);
-    font-weight:500;
-    @include darkness-shadow;
-   @include transition;
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-}
-
-.liste__bloc:hover
-{
-   background-color: #F5EDFF;
-    @include transition;
-}
-
-.bloc__card:hover
-{
-   @include darkness-shadow;
-   @include transition;
-}
-
-.loader {
-   position: fixed;
-   height: 100%;
-   width: 100%;
-   left: 0;
-   top: 0;
-   background-color: rgba(255, 255, 255, 0.90);
-   animation: loader 0.01s;
-   animation-delay: 1.75s;
-   animation-fill-mode: both;
-   z-index: 10000;
-   display:flex;
-   align-items:center;
-   justify-content:center;
- }
-
- @keyframes loader {
-   100% {
-     opacity: 0;
-     z-index: -10;
-   }
- }
-
- .linespinner {
-   width: 10px;
-   height: 30px;
-   background:$couleur-primaire;
-   position: relative;
-   animation: linespinner 1s ease-in-out infinite;
-   animation-delay: 0.4s;
-   border-radius: 8px;
-      &:after{
-      border-radius: 8px;
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 30px;
-      background: $couleur-secondaire;
-      animation: linespinner 1s ease-in-out infinite; 
-      left: 18px;
-      animation-delay: 0.6s;}
-      &:before{
-         border-radius: 8px;
-         content: '';
-         position: absolute;
-         width: 10px;
-         height: 30px;
-         background: $couleur-secondaire;
-         animation: linespinner 1s ease-in-out infinite;
-         right: 18px;
-         animation-delay: 0.15s; 
-      }
- }
-
- @keyframes linespinner {
-   0%, 100% {
-     background-color: $couleur-primaire;
-     box-shadow: 0 0 0 $couleur-primaire, 0 0 0 $couleur-primaire; }
-   50% {
-     background-color: $couleur-secondaire;
-     box-shadow: 0 -15px 0 $couleur-secondaire, 0 15px 0 $couleur-secondaire; 
-   }
-   }
-
-   @keyframes appear{
-      0%{
-          transform: scale(0);
-      }
-      100%{
-          transform: scale(1);
-      }
-   }

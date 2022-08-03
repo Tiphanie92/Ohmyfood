@@ -18,3 +18,9 @@
     transition-duration: 1s;
     transition-timing-function: ease;
 }
+
+@mixin break-word{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

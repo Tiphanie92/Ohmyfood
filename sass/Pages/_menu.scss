@@ -32,15 +32,19 @@ main {
   h1 {
     font-size: 2em;
   }
-}
-
-.menu__titre__principal {
-  display: flex;
-  padding-left: 1em;
-  .fa-menu {
-    position: absolute;
-    right: 1.7em;
-    top: 1.3em;
+  &__titre__principal {
+    display: flex;
+    padding-left: 1em;
+    .bouton_coeur
+    {
+      background: none;
+      border: none;
+      .fa-menu {
+        position: absolute;
+        right: 1.7em;
+        top: 1.5em;
+      }
+    }
   }
 }
 
@@ -101,7 +105,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100px;
+    border-radius: 3.25em;
     transform: rotate(180deg);
     transition-duration: 0.5s;
   }
@@ -133,22 +137,16 @@ main {
 .menu__card {
   margin: 1em 0em 1em 1em;
   flex: 1;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  @include break-word;
   h3 {
     margin: 0;
     padding: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @include break-word;
   }
   p {
     margin: 0.2em 0 0 0;
     padding: 0;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @include break-word;
   }
 }
 
