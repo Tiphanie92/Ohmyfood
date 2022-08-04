@@ -53,6 +53,7 @@
   color: white;
   @include shadow;
   border: none;
+  @include transition;
 }
 
 /*Section Fonctionnement*/
@@ -75,6 +76,7 @@
     font-size: 1.5rem;
     block-size: 100%;
     @include shadow;
+    @include transition;
   }
   &__icone {
     width: 1.2em;
@@ -139,6 +141,7 @@
   @include shadow;
   border-radius: 0.9em;
   margin-bottom: 2em;
+  @include transition
 }
 
 .menu__image {
@@ -174,8 +177,6 @@
     position: absolute;
     right: 1em;
     bottom: 2em;
-    background: none;
-    border: none;
   }
 
   &__texte {
@@ -193,25 +194,10 @@
 }
 /*--------------Responsive---------------------*/
 @media screen and (min-width: 767px) and (max-width: 1023px) {
-  h2 {
-    font-size: 1.4em;
-  }
 
-  h3 {
-    font-size: 1.2em;
-  }
-
-  p {
-    font-size: 1.1em;
-  }
   /*---Section Reservation--*/
   .reserver h1 {
     font-size: 1.5em;
-  }
-
-  .bouton-explorer {
-    padding: 0 0.4em 0 0.4em;
-    font-size: 1.1em;
   }
 
   /*--Section Fonctionnement__*/

@@ -51,14 +51,15 @@
 .bouton-explorer:hover {
   filter: brightness(110%);
   font-weight: 500;
-  box-shadow: 2px 4px 15px 1px #737373;
+  box-shadow: 2px 4px 15px 1px #b0b0b0;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 
 /*Remplissage coeur*/
-.fa-heart:active {
+.fa-heart:hover {
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
@@ -67,29 +68,21 @@
   animation: fill 0.9s ease-out;
 }
 
-@media screen and (min-width: 1024px) {
-  .fa-heart:hover {
-    background: linear-gradient(#9356DC, #FF79DA);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    animation: fill 0.9s ease-out;
-  }
-}
 /*transition sur card*/
 .liste__bloc:hover {
   background-color: #f5edff;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 
 .bloc__card:hover {
-  box-shadow: 2px 4px 15px 1px #737373;
+  box-shadow: 2px 4px 15px 1px #b0b0b0;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 
 /*Keyframes*/
@@ -260,16 +253,13 @@ main {
 }
 .menu h1 {
   font-size: 2em;
+  padding-right: 1.6em;
 }
 .menu__titre__principal {
   display: flex;
   padding-left: 1em;
 }
-.menu__titre__principal .bouton_coeur {
-  background: none;
-  border: none;
-}
-.menu__titre__principal .bouton_coeur .fa-menu {
+.menu__titre__principal .fa-menu {
   position: absolute;
   right: 1.7em;
   top: 1.5em;
@@ -307,7 +297,6 @@ main {
   margin: 1em;
   display: flex;
   animation: appear 0.5s;
-  animation-timing-function: cubic-bezier(0.57, -0.3, 0.36, 1.2);
   transform: scale(0);
   animation-fill-mode: both;
   overflow: hidden;
@@ -334,7 +323,8 @@ main {
   justify-content: center;
   border-radius: 3.25em;
   transform: rotate(180deg);
-  transition-duration: 0.5s;
+  transition-duration: 0.8s;
+  animation-delay: 0.8s;
 }
 .menu__bloc:hover .menu__icone {
   transform: rotate(0);
@@ -411,14 +401,19 @@ main {
   justify-content: center;
   align-items: center;
   border: none;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 .commander .bouton-commande:hover {
   filter: brightness(110%);
   font-weight: 500;
-  box-shadow: 2px 4px 15px 1px #737373;
+  box-shadow: 2px 4px 15px 1px #b0b0b0;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 
 /*------Responsive-----------*/
@@ -514,6 +509,10 @@ main {
   color: white;
   box-shadow: 1px 4px 14px 1px #cecece;
   border: none;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 
 /*Section Fonctionnement*/
@@ -536,6 +535,10 @@ main {
   font-size: 1.5rem;
   block-size: 100%;
   box-shadow: 1px 4px 14px 1px #cecece;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 .liste__icone {
   width: 1.2em;
@@ -604,6 +607,10 @@ main {
   box-shadow: 1px 4px 14px 1px #cecece;
   border-radius: 0.9em;
   margin-bottom: 2em;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0.3s;
 }
 
 .menu__image {
@@ -640,8 +647,6 @@ main {
   position: absolute;
   right: 1em;
   bottom: 2em;
-  background: none;
-  border: none;
 }
 .card__texte {
   padding: 1em;
@@ -658,22 +663,9 @@ main {
 
 /*--------------Responsive---------------------*/
 @media screen and (min-width: 767px) and (max-width: 1023px) {
-  h2 {
-    font-size: 1.4em;
-  }
-  h3 {
-    font-size: 1.2em;
-  }
-  p {
-    font-size: 1.1em;
-  }
   /*---Section Reservation--*/
   .reserver h1 {
     font-size: 1.5em;
-  }
-  .bouton-explorer {
-    padding: 0 0.4em 0 0.4em;
-    font-size: 1.1em;
   }
   /*--Section Fonctionnement__*/
   .liste {

@@ -30,20 +30,16 @@ main {
   block-size: 100%;
   h1 {
     font-size: 2em;
+    padding-right: 1.6em;
   }
   &__titre__principal {
     display: flex;
     padding-left: 1em;
-    .bouton_coeur
-    {
-      background: none;
-      border: none;
-      .fa-menu {
-        position: absolute;
-        right: 1.7em;
-        top: 1.5em;
+    .fa-menu {
+      position: absolute;
+      right: 1.7em;
+      top: 1.5em;
       }
-    }
   }
 }
 
@@ -80,7 +76,6 @@ main {
   margin: 1em;
   display: flex;
   animation: appear 0.5s;
-  animation-timing-function: cubic-bezier(0.57, -0.3, 0.36, 1.2);
   transform: scale(0);
   animation-fill-mode: both;
   overflow: hidden;
@@ -106,7 +101,8 @@ main {
     justify-content: center;
     border-radius: 3.25em;
     transform: rotate(180deg);
-    transition-duration: 0.5s;
+    transition-duration: 0.8s;
+    animation-delay: 0.8s;
   }
 
   &:hover .menu__icone {
@@ -178,6 +174,7 @@ main {
     justify-content: center;
     align-items: center;
     border: none;
+    @include transition;
     &:hover {
       filter: brightness(110%);
       font-weight: 500;
